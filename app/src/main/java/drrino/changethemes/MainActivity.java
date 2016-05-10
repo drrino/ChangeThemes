@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity implements ColorChooserDialog.Col
     toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
 
     ColorFloatingActionButton fab = (ColorFloatingActionButton) findViewById(R.id.fab);
+
     assert fab != null;
     fab.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
@@ -43,6 +44,7 @@ public class MainActivity extends BaseActivity implements ColorChooserDialog.Col
       }
     });
 
+    //使用沉浸式
     View mStatusBar = findViewById(R.id.status_bar);
     assert mStatusBar != null;
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

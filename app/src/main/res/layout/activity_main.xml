@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
   <drrino.changethemes.weight.ColorAppBarLayout
@@ -36,7 +35,7 @@
       android:layout_gravity="bottom|end"
       android:layout_margin="@dimen/fab_margin"
       android:src="@mipmap/fab_add"
-      app:backgroundTint="?attr/colorPrimary"
+      android:background="?attr/colorPrimary"
       />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -9,11 +9,11 @@ import drrino.changethemes.theme.ColorUiInterface;
 import drrino.changethemes.utils.ViewAttributeUtils;
 
 /**
- * Created by Coder on 16/5/9.
+ * Created by Coder on 16/5/10.
  */
 public class ColorFloatingActionButton extends FloatingActionButton implements ColorUiInterface {
-  private int attr_background = -1;
-  private int attr_img = -1;
+
+  private int attr_drawable = -1;
 
   public ColorFloatingActionButton(Context context) {
     super(context);
@@ -21,14 +21,12 @@ public class ColorFloatingActionButton extends FloatingActionButton implements C
 
   public ColorFloatingActionButton(Context context, AttributeSet attrs) {
     super(context, attrs);
-    this.attr_background = ViewAttributeUtils.getBackgroundAttribute(attrs);
-    this.attr_img = ViewAttributeUtils.getSrcAttribute(attrs);
+    this.attr_drawable = ViewAttributeUtils.getSrcAttribute(attrs);
   }
 
   public ColorFloatingActionButton(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
-    this.attr_background = ViewAttributeUtils.getBackgroundAttribute(attrs);
-    this.attr_img = ViewAttributeUtils.getSrcAttribute(attrs);
+    this.attr_drawable = ViewAttributeUtils.getSrcAttribute(attrs);
   }
 
   @Override public View getView() {
@@ -36,11 +34,8 @@ public class ColorFloatingActionButton extends FloatingActionButton implements C
   }
 
   @Override public void setTheme(Resources.Theme themeId) {
-    if(attr_background != -1) {
-      ViewAttributeUtils.applyBackgroundDrawable(this, themeId, attr_background);
-    }
-    if(attr_img != -1) {
-      ViewAttributeUtils.applyImageDrawable(this, themeId, attr_img);
+    if (attr_drawable != -1) {
+      ViewAttributeUtils.applyImageDrawable(this, themeId, attr_drawable);
     }
   }
 }
